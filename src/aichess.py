@@ -497,7 +497,7 @@ if __name__ == "__main__":
     #print("el siguiente estado ", aux2)
 
     ################################### MiniMax Apla-Beta ###################################
-    """
+
     i = 1
     check = 1
     while check != 0:
@@ -552,10 +552,10 @@ if __name__ == "__main__":
 
         if aichess.isCheckMate(currentStateW, currentStateB) or i == 1000:
             check = 0
-    """
+
 
     ################################### MiniMax ###################################
-    """
+
     i = 1
     check = 1
     while check != 0:
@@ -608,7 +608,7 @@ if __name__ == "__main__":
 
         if aichess.isCheckMate(currentStateW,currentStateB) or i == 1000:
             check = 0
-    """
+
     ################################### ExpectiMax ###################################
 
     i = 1
@@ -617,7 +617,7 @@ if __name__ == "__main__":
 
         if i % 2 != 0:
             chess_temp = copy.deepcopy(aichess.chess)
-            aux = aichess.expectimax(currentStateW, currentStateB, depth, True, True)[0]
+            aux = aichess.miniMax_ALphaBeta(currentStateW, currentStateB,depth,-99999,99999,True,True)[0]
             print("Turno Blancas")
             currentStateW = aichess.chess.boardSim.currentStateW
             currentStateB = aichess.chess.boardSim.currentStateB
@@ -684,10 +684,10 @@ if __name__ == "__main__":
     #     print("to: ",to)
 
     #     aichess.chess.moveSim(start, to)
-    """
+
     aichess.chess.boardSim.print_board()
     print("#Move sequence...  ", aichess.pathToTarget)
     print("#Visited sequence...  ", aichess.listVisitedStates)
     print("#Current State White...  ", aichess.chess.board.currentStateW)
     print("#Current State Black...  ", aichess.chess.board.currentStateB)
-    """
+
